@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Team from'./comps/team'
+import Price from'./comps/price'
 
 function App() {
   let he = 
@@ -36,6 +37,7 @@ function App() {
   return (
     <div className="App">
         <Team header={he} content={co} userTab={u}/>
+        <Price header={he} content={co} userTab={u}/>
     </div>
   );
 }
