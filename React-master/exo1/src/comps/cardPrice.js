@@ -1,24 +1,38 @@
 'use client';
 
 function Advantage({ advantage }) {
-    return (
-        <>
-            <span class="advantage__checkmark">{advantage.check}</span>
-            <p class="advantage__text">{advantage.text}</p>
-
-        </>
-
-    );
+    if(advantage.check){
+        return (
+            <>
+                <span class="advantage__checkmark">♥</span>
+                <p class="advantage__text">{advantage.text}</p>
+    
+            </>
+    
+        );
+    }
+    else{
+        return (
+            <>
+                <p class="advantage__text">{advantage.text}</p>
+    
+            </>
+    
+        );  
+    }
+    
 }
 
-export default function OfferCard({ advTab }) {
+export default function OfferCard(offers) {
 
     let advList = []
 
-    for (let advData of advTab) {
+    
+    for (let advData of offers.offerList) {
+        console.log(advData)
 
         advList.push(
-            <li className="advantage">
+            <li key={advData.key} className="advantage">
                 <Advantage advantage={advData} />
             </li>
         );
@@ -27,19 +41,19 @@ export default function OfferCard({ advTab }) {
 
     return (
         <>
-            <ul className="offer-box">
+            
                 <li class="offer-box__header">
-                    <h3 class="offer-box__name">{offer.name}</h3>
-                    <p class="offer-box__price">{offer.price}</p>
+                    <h3 class="offer-box__name">{offers.name}</h3>
+                    <p class="offer-box__price">{offers.price}</p>
                 </li>
 
                 {advList}
                 
                 <li>
-                    <a href={form.link} class="header__lien">
-                    <button class="header__button btn--hero__nav"> {form.btn}</button></a>
+                    <a href={offers.form.link} class="header__lien">
+                    <button class="header__button btn--hero__nav"> {offers.form.btn}</button></a>
                 </li>
-            </ul>
+            
         </>
     );
 

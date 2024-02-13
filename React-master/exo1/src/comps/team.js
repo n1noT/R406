@@ -1,10 +1,11 @@
 import Card from'./card'
 
-export default function Team({header, content, userTab}) {
+export default function Team(team) {
 
     let cardList = []
+   
 
-    for(let userData of userTab){
+    for(let userData of team.employees){
 
         cardList.push(
             <li className="gallery__pic">
@@ -17,12 +18,12 @@ export default function Team({header, content, userTab}) {
     return (
         <>
             <header class="team__header">
-                <h2 class="team__title">{header.title}</h2>
+                <h2 class="team__title">{team.header}</h2>
             </header>
 
             <section class="team__content">
-                <h1 class="team__heading">{content.title}</h1>
-                <p class="team__description">{content.desc}</p>
+                <h1 class="team__heading">{team.content.title}</h1>
+                <p class="team__description">{team.content.desc}</p>
             </section>
 
             <ul className="gallery">

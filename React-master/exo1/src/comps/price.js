@@ -1,28 +1,33 @@
-import OfferCard from'/cardPrice'
+import OfferCard from'./cardPrice'
 
-export default function Price ({}){
+export default function Price (prices){
     let offList = []
 
-    for (let offData of offList) {
+    for (let offData of prices.offers) {
 
         offList.push(
-            <li className="offer-box">
-                <OfferCard advTab={offData} />
-            </li>
+            <ul className="offer-box">
+                <OfferCard {...offData} />
+            </ul>
         );
 
     }
 
     return (
         <>
-            <ul className="offer-box">
-                
+            
+            <h2 class="offer-section__title">{prices.header}</h2>
 
+            <p class="offer-section__description">{prices.content.desc}</p>
+            
+
+            <div className="box">
+                
                 {offList}
+               
                 
-                
-            </ul>
+            </div>
         </>
-    );
+      );
 }
 
