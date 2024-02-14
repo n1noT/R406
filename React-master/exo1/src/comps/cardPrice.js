@@ -4,7 +4,7 @@ function Advantage({ advantage }) {
     if(advantage.check){
         return (
             <>
-                <span class="advantage__checkmark">♥</span>
+                <span class="advantage__checkmark">✓</span>
                 <p class="advantage__text">{advantage.text}</p>
     
             </>
@@ -14,6 +14,7 @@ function Advantage({ advantage }) {
     else{
         return (
             <>
+                <span class="advantage__checkmark"> &nbsp;</span>
                 <p class="advantage__text">{advantage.text}</p>
     
             </>

@@ -53,7 +53,8 @@ function App() {
           link:'#',
           btn: 'Start'
         }
-      }, {
+      }, 
+      {
         name:"Pro", 
         price:"59 999", 
         offerList:[
@@ -64,6 +65,23 @@ function App() {
           {key: '168476', check: true, text: "Offre 5 "},
           {key: '1646', check: false, text: "Offre 6"},
           {key: '1254', check: false, text: "Offre 7 "},
+        ],
+        form: {
+          link:'#',
+          btn: 'Start'
+        }
+      }, 
+      {
+        name:"Super Pro", 
+        price:"99 999", 
+        offerList:[
+          {key: '8', check: true, text: "Offre 1 "},
+          {key: '1686', check: true, text: "Offre 2 "},
+          {key: '168476', check: true, text: "Offre 3 "},
+          {key: '168483', check: true, text: "Offre 4 "},
+          {key: '1684763', check: true, text: "Offre 5 "},
+          {key: '1646411', check: false, text: "Offre 6"},
+          {key: '12542', check: false, text: "Offre 7 "},
         ],
         form: {
           link:'#',
