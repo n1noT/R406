@@ -1,61 +1,39 @@
 'use client';
 
-function Advantage({ advantage }) {
-    if(advantage.check){
+function Advantage({ text, check }) {
+    let checkmark = check ? "✓" : "\u00A0\u00A0\u00A0"
         return (
-            <>
-                <span class="advantage__checkmark">✓</span>
-                <p class="advantage__text">{advantage.text}</p>
+            <li className="advantage">
+                <span className="advantage__checkmark">{checkmark}</span>
+                <p className="advantage__text">{text}</p>
     
-            </>
+            </li>
     
         );
-    }
-    else{
-        return (
-            <>
-                <span class="advantage__checkmark"> &nbsp;</span>
-                <p class="advantage__text">{advantage.text}</p>
-    
-            </>
-    
-        );  
-    }
     
 }
 
-export default function OfferCard(offers) {
-
-    let advList = []
-
-    
-    for (let advData of offers.offerList) {
-        console.log(advData)
-
-        advList.push(
-            <li key={advData.key} className="advantage">
-                <Advantage advantage={advData} />
-            </li>
-        );
-
-    }
+export default function OfferCard({label, price, advantages, handler}) {
 
     return (
-        <>
-            
-                <li class="offer-box__header">
-                    <h3 class="offer-box__name">{offers.name}</h3>
-                    <p class="offer-box__price">{offers.price}</p>
-                </li>
+        <div className="offer-box">
+                <div className="offer-box__header">
+                    <h3 className="offer-box__name">{label}</h3>
+                    <p className="offer-box__price">{price}</p>
+                </div>
 
-                {advList}
+                <ul>
+                    {advantages.map((item, index) => (
+                        <Advantage key={index} text={item.text} check={item.check}/>
+                    ))}
+                </ul>
+
+                <a href='#' className="header__lien">
+                    <button onClick={handler} className="header__button btn--hero__nav"> Get Started</button>
+                </a>
                 
-                <li>
-                    <a href={offers.form.link} class="header__lien">
-                    <button class="header__button btn--hero__nav"> {offers.form.btn}</button></a>
-                </li>
             
-        </>
+        </div>
     );
 
 }

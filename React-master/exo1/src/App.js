@@ -39,63 +39,84 @@ function App() {
     offers:[
       {
         name:"Start", 
-        price:"29 999", 
+        price: {
+          buy: "29 999",
+          leasing: "299"
+        }, 
         offerList:[
-          {key: '16846', check: true, text: "Offre 1 "},
-          {key: '1486', check: true, text: "Offre 2 "},
-          {key: '1684468', check: false, text: "Offre 3 "},
-          {key: '164868', check: false, text: "Offre 4"},
-          {key: '1', check: false, text: "Offre 5 "},
-          {key: '1684684', check: false, text: "Offre 6 "},
-          {key: '168468', check: false, text: "Offre 7 "},
+          {check: true, text: "Assurance auto complémentaire"},
+          {check: true, text: "Première recharge offerte"},
+          {check: true, text: "Assurance contre le vol"},
+          {check: true, text: "Service de rappel d'entretien"},
+          {check: true, text: "Nettoyage hebdomadaire"},
+          {check: false, text: "Service de diagnostic à distance"},
+          {check: false, text: "Service de remplissage du réservoir"},
+          {check: false, text: "Service de réparation à domicile"},
+          {check: false, text: "Entretien régulier"},
+          {check: false, text: "Recharge d'hydrogène illimité"}
         ],
         form: {
           link:'#',
-          btn: 'Start'
         }
       }, 
       {
         name:"Pro", 
-        price:"59 999", 
+        price: {
+          buy: "59 999",
+          leasing: "599"
+        },  
         offerList:[
-          {key: '2', check: true, text: "Offre 1 "},
-          {key: '166', check: true, text: "Offre 2 "},
-          {key: '16846', check: true, text: "Offre 3 "},
-          {key: '16848', check: true, text: "Offre 4 "},
-          {key: '168476', check: true, text: "Offre 5 "},
-          {key: '1646', check: false, text: "Offre 6"},
-          {key: '1254', check: false, text: "Offre 7 "},
+          {check: true, text: "Assurance auto complémentaire"},
+          {check: true, text: "Première recharge offerte"},
+          {check: true, text: "Assurance contre le vol"},
+          {check: true, text: "Service de rappel d'entretien"},
+          {check: true, text: "Nettoyage hebdomadaire"},
+          {check: true, text: "Service de diagnostic à distance"},
+          {check: true, text: "Service de remplissage du réservoir"},
+          {check: false, text: "Service de réparation à domicile"},
+          {check: false, text: "Entretien régulier"},
+          {check: false, text: "Recharge d'hydrogène illimité"}
+
         ],
         form: {
           link:'#',
-          btn: 'Start'
         }
       }, 
       {
         name:"Super Pro", 
-        price:"99 999", 
+        price: {
+          buy: "99 999",
+          leasing: "999"
+        },  
         offerList:[
-          {key: '8', check: true, text: "Offre 1 "},
-          {key: '1686', check: true, text: "Offre 2 "},
-          {key: '168476', check: true, text: "Offre 3 "},
-          {key: '168483', check: true, text: "Offre 4 "},
-          {key: '1684763', check: true, text: "Offre 5 "},
-          {key: '1646411', check: false, text: "Offre 6"},
-          {key: '12542', check: false, text: "Offre 7 "},
+          {check: true, text: "Assurance auto complémentaire"},
+          {check: true, text: "Première recharge offerte"},
+          {check: true, text: "Assurance contre le vol"},
+          {check: true, text: "Service de rappel d'entretien"},
+          {check: true, text: "Nettoyage hebdomadaire"},
+          {check: true, text: "Service de diagnostic à distance"},
+          {check: true, text: "Service de remplissage du réservoir"},
+          {check: true, text: "Service de réparation à domicile"},
+          {check: true, text: "Entretien régulier"},
+          {check: true, text: "Recharge d'hydrogène illimité"}
+
         ],
         form: {
           link:'#',
-          btn: 'Start'
         }
       }, 
     
   ]
 };
 
+let cb_buy = function (){
+  alert("oui")
+}
+
   return (
     <div className="App">
         <Team {...data1}/>
-        <Price {...data2}/>
+        <Price {...data2, cb_buy}/>
       
     </div>
   );
